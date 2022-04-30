@@ -26,7 +26,7 @@ const ReactChart = (props) => {
     }, [props.type, props.data]);
 
     return (
-        <div>
+        <div className="my-4">
             <canvas ref={chartEl} width="400px" height="400px"></canvas>
         </div>
     );

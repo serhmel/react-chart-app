@@ -21,26 +21,30 @@ const ChartDataForm = (props) => {
     };
 
     return (
-        <form className="rc_dataForm" onSubmit={submitForm}>
-            <label htmlFor="rc_dataLabel">X axis labels:</label>
-            <input
-                className="rc_dataInput"
-                id="rc_dataLabel"
-                type="text"
-                value={labelsString}
-                onChange={e => setLabelsString(e.currentTarget.value)}
-                onBlur={updateData}
-            />
+        <form onSubmit={submitForm}>
+            <div className="mb-3">
+                <label className="form-label" htmlFor="rc_dataLabel">X axis labels:</label>
+                <input
+                    className="form-control"
+                    id="rc_dataLabel"
+                    type="text"
+                    value={labelsString}
+                    onChange={e => setLabelsString(e.currentTarget.value)}
+                    onBlur={updateData}
+                />
+            </div>
 
-            <label htmlFor="rc_dataValue">Y axis values:</label>
-            <input
-                className="rc_dataInput"
-                id="rc_dataValue"
-                type="text"
-                value={quantityString}
-                onChange={e => setQuantityString(e.currentTarget.value)}
-                onBlur={updateData}
-            />
+            <div className="mb-3">
+                <label className="form-label" htmlFor="rc_dataValue">Y axis values:</label>
+                <input
+                    className="form-control"
+                    id="rc_dataValue"
+                    type="text"
+                    value={quantityString}
+                    onChange={e => setQuantityString(e.currentTarget.value)}
+                    onBlur={updateData}
+                />
+            </div>
 
             <input type="submit" style={{display: 'none'}}/>
         </form>

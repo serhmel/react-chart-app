@@ -60,19 +60,29 @@ export default function App() {
     })
   }, [dynamicData]);
 
-  return <div className="rc_app">
-    <ChartDataForm
-        defaultLabels={defaultLabels}
-        setDynamicData={setDynamicData}
-        defaultQuantity={defaultQuantity}
-    />
+  return (
+      <div className="container my-5">
+          <div className="row justify-content-center">
+              <div className="col col-md-8">
+                  <div className="card">
+                      <div className="card-body">
+                          <ChartDataForm
+                              defaultLabels={defaultLabels}
+                              setDynamicData={setDynamicData}
+                              defaultQuantity={defaultQuantity}
+                          />
 
-    <ReactChart type={type} data={data} />
+                          <ReactChart type={type} data={data}/>
 
-    <TypeSwitcher
-        chartTypes={chartTypes}
-        type={type}
-        setType={setType}
-    />
-  </div>;
+                          <TypeSwitcher
+                              chartTypes={chartTypes}
+                              type={type}
+                              setType={setType}
+                          />
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  );
 }

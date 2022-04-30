@@ -2,15 +2,16 @@ import React from 'react';
 
 const TypeSwitcher = (props) => {
     return (
-        <ul className="rc_radioButtons">
+        <ul>
             {props.chartTypes.map((chartType, index) => {
                 return (
-                    <li className="rc_radioButtons_item" key={index}>
-                        <label>
+                    <li className="form-check" key={index}>
+                        <label className="form-check-label">
                             <input
+                                className="form-check-input"
                                 type="radio"
                                 value={chartType.type}
-                                name="chart"
+                                name="chart_type"
                                 defaultChecked={index === 0}
                                 onChange={() => props.setType(chartType.type)}
                             />
